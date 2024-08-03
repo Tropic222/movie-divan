@@ -1,6 +1,7 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import {
   AppBar,
+  Box,
   Container,
   Drawer,
   IconButton,
@@ -25,17 +26,19 @@ export default function Navbar() {
       <AppBar>
         <Container maxWidth="lg">
           <Toolbar>
-            <IconButton color="inherit">
+            <IconButton color="inherit" onClick={setOpen}>
               <MenuIcon />
             </IconButton>
             <Drawer open={isOpen} onClose={handleDrawerToggle}>
-              <List>
-                <ListItem disablePadding>
-                  <ListItemButton sx={{ textAlign: 'center' }}>
-                    <ListItemText primary="Фильмы" />
-                  </ListItemButton>
-                </ListItem>
-              </List>
+              <Box sx={{ width: 250 }} onClick={handleDrawerToggle}>
+                <List>
+                  <ListItem disablePadding>
+                    <ListItemButton sx={{ textAlign: 'center' }}>
+                      <ListItemText primary="Фильмы" />
+                    </ListItemButton>
+                  </ListItem>
+                </List>
+              </Box>
             </Drawer>
           </Toolbar>
         </Container>
