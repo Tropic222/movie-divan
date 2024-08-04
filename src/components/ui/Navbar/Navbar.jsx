@@ -1,3 +1,4 @@
+import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 import MenuIcon from '@mui/icons-material/Menu';
 import {
   AppBar,
@@ -8,12 +9,15 @@ import {
   List,
   ListItem,
   ListItemButton,
+  ListItemIcon,
   ListItemText,
   Slide,
   Toolbar,
+  Typography,
   useScrollTrigger,
 } from '@mui/material';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [isOpen, setOpen] = useState(false);
@@ -33,13 +37,24 @@ export default function Navbar() {
               <Box sx={{ width: 250 }} onClick={handleDrawerToggle}>
                 <List>
                   <ListItem disablePadding>
-                    <ListItemButton sx={{ textAlign: 'center' }}>
+                    <ListItemButton>
+                      <ListItemIcon>
+                        <LocalMoviesIcon />
+                      </ListItemIcon>
                       <ListItemText primary="Фильмы" />
                     </ListItemButton>
                   </ListItem>
                 </List>
               </Box>
             </Drawer>
+            <Typography
+              sx={{ color: 'white', textDecoration: 'none' }}
+              variant="h5"
+              component={Link}
+              to="/"
+            >
+              Divan
+            </Typography>
           </Toolbar>
         </Container>
       </AppBar>
