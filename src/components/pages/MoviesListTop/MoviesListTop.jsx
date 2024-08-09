@@ -1,3 +1,4 @@
+import { Button, Stack, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -12,6 +13,16 @@ export default function MoviesListTop() {
     type: movieType.value,
     page,
   });
-  console.log(data, error, isLoading);
-  return <div>MoviesListTop</div>;
+
+  if (error) return <p>Some error</p>;
+  if (isLoading) return <p>Loading..</p>;
+
+  return (
+    <>
+      <Stack flexDirection="row">
+        <Button>Назад</Button>
+        <Typography>{movieType.title}</Typography>
+      </Stack>
+    </>
+  );
 }
