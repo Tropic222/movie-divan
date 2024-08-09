@@ -51,7 +51,7 @@ export default function Navbar() {
                       <ListItem disablePadding>
                         <ListItemButton>
                           <ListItemIcon>
-                            {/* <Icon iconName={item.icon} /> */}
+                            <Icon iconName={item.icon} />
                           </ListItemIcon>
                           <ListItemText primary={item.title} />
                         </ListItemButton>
@@ -66,7 +66,7 @@ export default function Navbar() {
                       <ListItem disablePadding>
                         <ListItemButton>
                           <ListItemIcon>
-                            {/* <Icon iconName={item.icon} /> */}
+                            <Icon iconName={item.icon} />
                           </ListItemIcon>
                           <ListItemText primary={item.title} />
                         </ListItemButton>
