@@ -23,9 +23,9 @@ export default function MoviesListTop() {
 
   return (
     <>
-      <Stack flexDirection="row">
+      <Stack flexDirection="row" sx={{ mt: 2, mb: 2 }}>
         <Button startIcon={<ArrowBack />} onClick={() => navigate(-1)} />
-        <Typography>{movieType.title}</Typography>
+        <Typography variant="h4">{movieType.title}</Typography>
       </Stack>
       <MoviesList
         movies={data.items}
