@@ -1,3 +1,4 @@
+import { ArrowBack } from '@mui/icons-material';
 import { Button, Stack, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -21,7 +22,7 @@ export default function MoviesListTop() {
   return (
     <>
       <Stack flexDirection="row">
-        <Button>Назад</Button>
+        <Button startIcon={<ArrowBack />} />
         <Typography>{movieType.title}</Typography>
       </Stack>
       <MoviesList
