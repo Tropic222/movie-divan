@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
+  page: 1,
   countries: '',
-  gengreId: '',
-  oreder: 'NUM_VOTE',
+  genreId: '',
+  order: 'NUM_VOTE',
   type: '',
   year: '',
-  page: 1,
 };
 
 export const currentQuerySlice = createSlice({
