@@ -30,9 +30,12 @@ export default function Movies() {
 
   return (
     <div>
-      {carouselArr.map((carousel, index) => (
-        <BearCarousel key={index} data={carousel.data} />
-      ))}
+      <BearCarousel
+        data={carouselArr[0].data}
+        slidesPerView={5}
+        slidesPerGroup={1}
+        isEnableNavButton
+      />
     </div>
   );
 }
