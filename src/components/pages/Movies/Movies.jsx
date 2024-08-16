@@ -1,5 +1,7 @@
+import { Stack } from '@mui/material';
 import BearCarousel, { BearSlideImage } from 'bear-react-carousel';
 import React from 'react';
+import { Link, Link as RouterLink } from 'react-router-dom';
 
 import useMoviesQuery from '../../../hooks/useMoviesQuery';
 
@@ -30,18 +32,30 @@ export default function Movies() {
 
   return (
     <div>
-      <BearCarousel
-        data={carouselArr[0].data}
-        slidesPerView={1}
-        slidesPerGroup={1}
-        isEnableNavButton
-        isEnableLoop
-        breakpoints={{
-          768: {
-            slidesPerView: 5,
-          },
-        }}
-      />
+      <Stack>
+        <Link
+          sx={{ mt: 2, mb: 2 }}
+          variant="h1"
+          component={RouterLink}
+          to={carouselArr[0].url}
+        >
+          {carouselArr[0].title}
+        </Link>
+        <BearCarousel
+          data={carouselArr[0].data}
+          slidesPerView={1}
+          slidesPerGroup={1}
+          isEnableNavButton
+          isEnableLoop
+          isEnableAutoPlay
+          autoPlayTime={5000}
+          breakpoints={{
+            768: {
+              slidesPerView: 5,
+            },
+          }}
+        />
+      </Stack>
     </div>
   );
 }
