@@ -3,8 +3,12 @@ import React from 'react';
 
 import MovieCard from '../MovieCard/MovieCard';
 
-export default function MoviesList({ movies, totalPages, page, setPage }) {
-  console.log(totalPages);
+export default function MoviesList({
+  movies = [],
+  totalPages = 0,
+  page,
+  setPage,
+}) {
   return (
     <>
       <Stack direction="row" justifyContent="center" flexWrap="wrap">
