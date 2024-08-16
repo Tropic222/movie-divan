@@ -4,6 +4,7 @@ import React from 'react';
 import { Link, Link as RouterLink } from 'react-router-dom';
 
 import useMoviesQuery from '../../../hooks/useMoviesQuery';
+import ErrorMessage from '../../ui/ErrorMessage';
 
 export default function Movies() {
   const { isLoading, hasError, responsePopular, responseBest } =
@@ -13,7 +14,7 @@ export default function Movies() {
   if (isLoading) return <p>Loading...</p>;
 
   // TODO: add error component
-  if (hasError) return <p>Error message</p>;
+  if (!hasError) return <ErrorMessage />;
 
   const serializeDataForCarousel = data =>
     data.map(row => (
