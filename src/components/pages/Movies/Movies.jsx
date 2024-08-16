@@ -50,6 +50,9 @@ export default function Movies() {
           isEnableAutoPlay
           autoPlayTime={5000}
           breakpoints={{
+            375: {
+              autoPlayTime: 0,
+            },
             768: {
               slidesPerView: 5,
             },
