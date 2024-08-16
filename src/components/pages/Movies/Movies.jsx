@@ -17,7 +17,9 @@ export default function Movies() {
 
   const serializeDataForCarousel = data =>
     data.map(row => (
-      <BearSlideImage key={row.id} imageUrl={row.posterUrlPreview} />
+      <RouterLink key={row.id} to={`/movie/${row.kinopoiskId}`}>
+        <BearSlideImage imageUrl={row.posterUrlPreview} />
+      </RouterLink>
     ));
 
   const carouselArr = [
@@ -28,37 +30,46 @@ export default function Movies() {
         ? serializeDataForCarousel(responsePopular.data.items)
         : [],
     },
+    {
+      title: 'Лучшие фильмы',
+      url: '/best',
+      data: responsePopular.data
+        ? serializeDataForCarousel(responseBest.data.items)
+        : [],
+    },
   ];
 
   return (
-    <div>
-      <Stack>
-        <Link
-          sx={{ mt: 2, mb: 2 }}
-          variant="h1"
-          component={RouterLink}
-          to={carouselArr[0].url}
-        >
-          {carouselArr[0].title}
-        </Link>
-        <BearCarousel
-          data={carouselArr[0].data}
-          slidesPerView={1}
-          slidesPerGroup={1}
-          isEnableNavButton
-          isEnableLoop
-          isEnableAutoPlay
-          autoPlayTime={5000}
-          breakpoints={{
-            375: {
-              autoPlayTime: 0,
-            },
-            768: {
-              slidesPerView: 5,
-            },
-          }}
-        />
-      </Stack>
-    </div>
+    <>
+      {carouselArr.map(carousel => (
+        <Stack key={carousel.title}>
+          <Link
+            sx={{ mt: 2, mb: 2 }}
+            variant="h1"
+            component={RouterLink}
+            to={carousel.url}
+          >
+            {carousel.title}
+          </Link>
+          <BearCarousel
+            data={carousel.data}
+            slidesPerView={1}
+            slidesPerGroup={1}
+            isEnableNavButton
+            isEnableLoop
+            isEnableAutoPlay
+            autoPlayTime={5000}
+            breakpoints={{
+              375: {
+                autoPlayTime: 0,
+              },
+              768: {
+                slidesPerView: 5,
+              },
+            }}
+          />
+        </Stack>
+      ))}
+    </>
   );
 }
