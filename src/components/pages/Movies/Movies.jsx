@@ -32,9 +32,15 @@ export default function Movies() {
     <div>
       <BearCarousel
         data={carouselArr[0].data}
-        slidesPerView={5}
+        slidesPerView={1}
         slidesPerGroup={1}
         isEnableNavButton
+        isEnableLoop
+        breakpoints={{
+          768: {
+            slidesPerView: 5,
+          },
+        }}
       />
     </div>
   );
