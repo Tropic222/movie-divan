@@ -8,6 +8,7 @@ import { useGetFilmsTopQuery } from '../../../services/kinopoiskApi';
 import ErrorMessage from '../../ui/ErrorMessage/ErrorMessage.jsx';
 import MovieListSkeleton from '../../ui/MovieListSkeleton/MovieListSkeleton.jsx';
 import MoviesList from '../../ui/MoviesList/index.js';
+import SelectMovies from '../../ui/SelectMovies/SelectMovies.jsx';
 
 export default function MoviesListTop() {
   const location = useLocation();
@@ -33,6 +34,7 @@ export default function MoviesListTop() {
         <Button startIcon={<ArrowBack />} onClick={() => navigate(-1)} />
         <Typography variant="h4">{movieType.title}</Typography>
       </Stack>
+      <SelectMovies />
       <MoviesList
         movies={data.items}
         totalPages={data.totalPages}

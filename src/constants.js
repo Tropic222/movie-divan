@@ -85,19 +85,19 @@ export const TOP_LISTS = [
 ];
 
 export const MOVIE_LISTS = [
-  {
-    title: 'Фильмы',
-    icon: 'LocalMovies',
-    url: '/films',
-  },
-  {
-    title: 'Сериалы',
-    icon: 'Reorder',
-    url: '/serials',
-  },
-  {
-    title: 'Мультфильмы',
-    icon: 'Fort',
-    url: '/cartoons',
-  },
+  // {
+  //   title: 'Фильмы',
+  //   icon: 'LocalMovies',
+  //   url: '/films',
+  // },
+  // {
+  //   title: 'Сериалы',
+  //   icon: 'Reorder',
+  //   url: '/serials',
+  // },
+  // {
+  //   title: 'Мультфильмы',
+  //   icon: 'Fort',
+  //   url: '/cartoons',
+  // },
 ];
