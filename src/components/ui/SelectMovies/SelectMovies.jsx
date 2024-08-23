@@ -1,4 +1,7 @@
+import CloseIcon from '@mui/icons-material/Close';
 import {
+  Box,
+  Button,
   FormControl,
   InputLabel,
   MenuItem,
@@ -9,19 +12,48 @@ import React from 'react';
 
 export default function SelectMovies() {
   return (
-    <Stack sx={{ flexDirection: { sm: 'column', md: 'row' } }}>
+    <Stack
+      mt={2}
+      mb={2}
+      sx={{ flexDirection: { sm: 'column', md: 'row', gap: 1 } }}
+    >
       <FormControl fullWidth size="small">
-        <InputLabel id="demo-simple-select-label">Age</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          label="Age"
-        >
+        <InputLabel>Сортировка</InputLabel>
+        <Select label="Age">
           <MenuItem value={10}>Ten</MenuItem>
           <MenuItem value={20}>Twenty</MenuItem>
           <MenuItem value={30}>Thirty</MenuItem>
         </Select>
       </FormControl>
+      <FormControl fullWidth size="small">
+        <InputLabel>Страна</InputLabel>
+        <Select label="Age">
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl fullWidth size="small">
+        <InputLabel>Жанр</InputLabel>
+        <Select label="Age">
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl fullWidth size="small">
+        <InputLabel>Год</InputLabel>
+        <Select label="Age">
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+      <Box>
+        <Button variant="outlined" startIcon={<CloseIcon />}>
+          Сбросить
+        </Button>
+      </Box>
     </Stack>
   );
 }

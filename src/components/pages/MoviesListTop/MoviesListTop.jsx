@@ -35,6 +35,7 @@ export default function MoviesListTop() {
         <Typography variant="h4">{movieType.title}</Typography>
       </Stack>
       <SelectMovies />
+
       <MoviesList
         movies={data.items}
         totalPages={data.totalPages}
