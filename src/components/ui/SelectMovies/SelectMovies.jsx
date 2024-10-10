@@ -10,12 +10,16 @@ import {
 } from '@mui/material';
 import React from 'react';
 
+import { useGetGenreAndCountriesQuery } from '../../../services/kinopoiskApi';
+
 export default function SelectMovies() {
+  const { data, error, isLoading } = useGetGenreAndCountriesQuery();
+  console.log(data);
   return (
     <Stack
       mt={2}
       mb={2}
-      sx={{ flexDirection: { sm: 'column', md: 'row', gap: 1 } }}
+      sx={{ flexDirection: { sm: 'column', md: 'row' }, gap: 1 }}
     >
       <FormControl fullWidth size="small">
         <InputLabel>Сортировка</InputLabel>

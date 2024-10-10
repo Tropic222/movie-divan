@@ -25,6 +25,12 @@ export default function MoviesListTop() {
     setPage(1);
   }, [location]);
 
+  useEffect(() => {
+    if (data) {
+      console.log(('Data from APi', data));
+    }
+  }, [data]);
+
   if (error) return <ErrorMessage />;
   if (isLoading) return <MovieListSkeleton />;
 
